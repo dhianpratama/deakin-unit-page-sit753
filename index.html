@@ -23,10 +23,21 @@
           type="text"
           id="searchInput"
           placeholder="I want to know about ..."
+          required
         />
         <button class="search-button" onclick="performSearch()">
           Search Now
         </button>
+      </div>
+      <!-- Error message -->
+      <p id="error-message"></p>
+
+      <!-- Modal design -->
+      <div id="search-modal" class="modal">
+        <div class="modal-content">
+          <h3>We are fetching the information</h3>
+          <p>Please give us a moment ...</p>
+        </div>
       </div>
     </section>
     <h1>SIT223-SIT753 - Professional Practice in IT</h1>
