@@ -96,6 +96,8 @@ p {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
 }
 
 .search-bar-section h1{
@@ -126,7 +128,7 @@ p {
 }
 
 .search-button:hover {
-  background-color: #0056b3;
+  background-color: #5CE65C; /* Accent color on hover */
 }
 
 .modal {
@@ -172,4 +174,7 @@ p {
   border: 1px solid red; /* Add a red border */
   border-radius: 5px; /* Rounded corners */
   background-color: #ffe6e6; /* Light red background for emphasis */
+  text-align: center; /* Center the text */
+  margin: 10px auto 10px auto; /* Center the error message */
+  max-width: 20%; /* Limit the width of the error message */
 }
