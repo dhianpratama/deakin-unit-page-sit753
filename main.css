@@ -25,6 +25,10 @@ p {
   --brand-bg: #004b6e;      /* deep blue */
   --brand-text: #ffffff;    /* white text on header */
   --brand-accent: #cde7f5;  /* subtle accent if needed */
+  --nav-bg: #333;           /* Navigation background */
+  --nav-link-color: white;  /* Navigation link color */
+  --nav-hover-bg: #555;     /* Navigation link hover background */
+  --nav-active-bg: #04AA6D; /* Navigation link active background */
 }
 
 .site-header {
@@ -83,14 +87,96 @@ p {
   }
 }
 
-/* ===== Your existing styles (kept) ===== */
-.navigation-bar{
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
+/* ===== US2: Easy Navigation Menu ===== */
+.navigation-bar {
+  background-color: var(--nav-bg); /* Sets the background color for the navigation bar */
+  padding: 0 20px; /* Adds horizontal padding to the navigation bar */
+  display: flex; /* Uses flexbox for layout */
+  justify-content: center; /* Centers navigation links horizontally */
+  align-items: center; /* Centers items vertically */
+  min-height: 50px; /* Ensures a minimum height for the navigation bar */
+  position: relative; /* Needed for positioning the hamburger menu on mobile */
 }
 
+.nav-links {
+  list-style: none; /* Removes bullet points from list items */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  display: flex; /* Arranges navigation links in a row for desktop */
+}
+
+.nav-links li a {
+  display: block; /* Makes the entire link area clickable */
+  color: var(--nav-link-color); /* Sets the text color of navigation links */
+  text-decoration: none; /* Removes underline from links */
+  padding: 15px 20px; /* Provides ample padding for touch targets */
+  transition: background-color 0.3s ease; /* Smooth transition for background color on hover */
+  font-family: Arial, sans-serif; /* Sets font family */
+  font-size: 16px; /* Sets font size */
+}
+
+.nav-links li a:hover {
+  background-color: var(--nav-hover-bg); /* Background color on hover state */
+}
+
+.nav-links li a.active {
+  background-color: var(--nav-active-bg); /* Background color for the active link state */
+  font-weight: bold; /* Makes the active link text bold */
+}
+
+.hamburger-menu {
+  display: none; /* Hides the hamburger menu by default on desktop */
+  background: none; /* Removes background */
+  border: none; /* Removes border */
+  color: var(--nav-link-color); /* Sets icon color */
+  font-size: 24px; /* Sets icon size */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  padding: 10px; /* Adds padding around the icon */
+}
+
+/* Responsive navigation for mobile */
+@media (max-width: 768px) {
+  .navigation-bar {
+    justify-content: space-between; /* Spaces out hamburger menu and potential logo */
+    padding: 0 15px; /* Adjusts padding for mobile */
+  }
+
+  .hamburger-menu {
+    display: block; /* Shows the hamburger menu on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hides navigation links by default on mobile */
+    flex-direction: column; /* Stacks links vertically */
+    width: 100%; /* Takes full width */
+    position: absolute; /* Positions absolutely relative to the navigation bar */
+    top: 100%; /* Positions below the navigation bar */
+    left: 0; /* Aligns to the left */
+    background-color: var(--nav-bg); /* Sets background color */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Adds a subtle shadow */
+    z-index: 999; /* Ensures it's above other content */
+  }
+
+  .nav-links.active {
+    display: flex; /* Shows navigation links when the 'active' class is present */
+  }
+
+  .nav-links li {
+    text-align: center; /* Centers text within list items */
+    border-top: 1px solid #444; /* Adds a separator for menu items */
+  }
+
+  .nav-links li:first-child {
+    border-top: none; /* Removes border from the first menu item */
+  }
+
+  .nav-links li a {
+    padding: 15px; /* Adjusts padding for mobile menu items */
+  }
+}
+
+
+/* ===== Your existing styles (kept) ===== */
 .search-bar-section{
   margin: 20px;
   padding: 10px;
@@ -165,7 +251,7 @@ p {
   display: none; /* Hide the error message if it's empty */
 }
 
-#error-message { 
+#error-message {
   color: red;
   font-weight: bold;
   font-size: 14px; /* Adjust font size */
