@@ -242,6 +242,11 @@ p {
   border: 2px solid #04AA6D; /* Add border color */
 }
 
+.modal-content h3{
+  margin-top: 0; /* Remove default top margin */
+  color: #04AA6D; /* Brand accent color */
+}
+
 .modal-content p {
   margin: 10px 0; /* Add spacing between paragraphs */
   color: #333; /* Dark text color */
