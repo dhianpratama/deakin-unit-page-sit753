@@ -264,3 +264,11 @@ p {
   margin: 10px auto 10px auto; /* Center the error message */
   max-width: 20%; /* Limit the width of the error message */
 }
+
+.unit-details {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--brand-accent);
+}
