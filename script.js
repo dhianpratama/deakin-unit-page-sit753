@@ -13,7 +13,7 @@ function performSearch() {
 
     // Simulate API delay (e.g., 2 seconds)
     setTimeout(() => {
-      alert(`You searched for: ${query}`);
+      console.log(`User searched for: ${query}`);
       // Hide the modal
       searchModal.style.display = 'none';
     }, 2000); // 2-second delay
@@ -22,3 +22,15 @@ function performSearch() {
     errorMessage.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="margin-right: 5px;"></i> Search box cannot be blank!';
   }
 }
+
+// US2: Easy Navigation Menu - Hamburger menu functionality
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburgerMenu && navLinks) {
+    hamburgerMenu.addEventListener('click', function () {
+      navLinks.classList.toggle('active'); // Toggle 'active' class to show/hide menu
+    });
+  }
+});
